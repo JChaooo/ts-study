@@ -137,7 +137,7 @@ console.log("新增后长度：", length, "；新增后的nums数组是：", num
  * reduce()
  * 将数组元素计算为一个值（从左到右）。
  */
-var total = [1,2,3,4,5].reduce((previousValue, currentValue) => {
+var total = [1, 2, 3, 4, 5].reduce((previousValue, currentValue) => {
     console.log("previousValue====", previousValue);
     console.log("currentValue====", currentValue);
     return previousValue + currentValue
@@ -155,6 +155,109 @@ console.log(total);
     currentValue==== 5
     15
  */
+
+
+/**
+ * reduceRight()
+ * 将数组元素计算为一个值（从右到左）。
+ */
+var total = [9, 3, 2, 1, 2].reduceRight((previousValue, currentValue) => {
+    return (previousValue - currentValue)
+})
+console.log(total); // 输出-13
+
+
+/**
+ * reverse()
+ * 反转数组的元素顺序。
+ */
+var reArr = [1, 2, 3, 4].reverse();
+console.log(reArr); // 输出 [ 4, 3, 2, 1 ]
+
+
+/**
+ * shift()
+ * 删除并返回数组的第一个元素。
+ */
+var result_num = reArr.shift()
+console.log(result_num); // 输出 4
+
+
+/**
+ * slice()
+ * 选取数组的的一部分，并返回一个新数组。
+ */
+var arr = [3, 2, 1, 4, 5, 6]
+var new_arr = arr.slice(1, 4)
+console.log(new_arr); // 输出 [ 2, 1, 4 ]
+
+
+/**
+ * some()
+ * 检测数组元素中是否有元素符合指定条件。
+ */
+var result = [1, 2, 3, 4, 5, 6].some((number, index, array) => {
+    return number > 6
+})
+console.log(result); // 输出 false
+
+
+/**
+ * sort()
+ * 对数组的元素进行排序。
+ */
+var new_arr = [9, 34, 0, 4, 83, 23, 743].sort((a, b) => {
+    return a - b
+});
+console.log(new_arr);
+/**
+ * 输出：
+ * [
+   0,  4,   9, 23,
+  34, 83, 743
+]
+ */
+var sorted = ['achao', 'JChaooo', 'do', 'Do'].sort();
+console.log(sorted); // 输出： [ 'Do', 'JChaooo', 'achao', 'do' ]
+
+
+/**
+ * splice()
+ * 从数组中添加或删除元素。返回值是删除的元素数组
+ */
+var arr = [1, 2, 3, 4, 5];
+var adding = arr.splice(2, 0, 6);
+console.log(arr, adding); // 输出： [ 1, 2, 6, 3, 4, 5 ] []
+var adding = arr.splice(0, 1);
+console.log(adding); // 输出： [ 1 ]
+console.log(arr); // 输出：[ 2, 6, 3, 4, 5 ]
+
+
+/**
+ * toString()
+ * 把数组转换为字符串，并返回结果。
+ */
+var resultStr = arr.toString();
+console.log(resultStr); // 输出：2,6,3,4,5
+
+
+/**
+ * unshift()
+ * 向数组的开头添加一个或更多元素，并返回新的长度。
+ */
+var arr = [1, 2, 3, 4]
+console.log(arr.length); // 输出 4
+var newLength = arr.unshift(5, 6, 7);
+console.log(arr); // 输出 [5, 6, 7, 1,2, 3, 4]
+console.log(newLength); // 输出 7
+
+
+
+
+
+
+
+
 
 
 
